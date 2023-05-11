@@ -15,8 +15,8 @@ import java.nio.file.Path;
 import java.security.MessageDigest;
 
 public class VelocityMySQLFix {
-    private static final String MYSQL_VERSION = "8.0.30";
-    private static final String MYSQL_SHA256 = "b5bf2f0987197c30adf74a9e419b89cda4c257da2d1142871f508416d5f2227a";
+    private static final String MYSQL_VERSION = "8.0.33";
+    private static final String MYSQL_SHA256 = "e2a3b2fc726a1ac64e998585db86b30fa8bf3f706195b78bb77c5f99bf877bd9";
     private final ProxyServer server;
     private final Logger logger;
     private final Path dataDirectory;
@@ -41,7 +41,7 @@ public class VelocityMySQLFix {
     }
 
     private String getMySQLLibraryName() {
-        return "mysql-connector-java-" + MYSQL_VERSION + ".jar";
+        return "mysql-connector-j-" + MYSQL_VERSION + ".jar";
     }
 
     private File getMySQLLibraryFile() {
@@ -49,7 +49,7 @@ public class VelocityMySQLFix {
     }
 
     private String getMySQLDownloadUrl() {
-        return "https://maven.aliyun.com/repository/public/mysql/mysql-connector-java/"
+        return "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/"
                 .concat(MYSQL_VERSION)
                 .concat("/")
                 .concat(getMySQLLibraryName());
